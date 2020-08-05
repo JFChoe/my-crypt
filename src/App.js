@@ -3,11 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
+  const [cex, setCex] = useState({btc_bid: 0, btc_ask: 0, eth_bid: 0, eth_ask: 0});
+
+  const [bitfinex, setBitfinex] = useState({btc_bid: 0, btc_ask: 0, eth_bid: 0, eth_ask: 0});
 
   useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
+    fetch('/cex').then(res => res.json()).then(data => {
+      setCex({btc_bid: data.btc_bid, btc_ask: data.btc_ask, eth_bid: data.eth_bid, eth_ask: data.eth_ask});
+    });
+
+    fetch('/bitfinex').then(res => res.json()).then(data => {
+      setBitfinex({btc_bid: data.btc_bid, btc_ask: data.btc_ask, eth_bid: data.eth_bid, eth_ask: data.eth_ask});
     });
   }, []);
 
@@ -17,17 +23,20 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> 
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/JFChoe/my-crypt"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Source code can be found here.
         </a>
 
-        <p>The current time is {currentTime}.</p>
+        <p>The last bid for BTC from CEX.io is ${cex.btc_bid}. The last bid for BTC from Bitfinex is ${bitfinex.btc_bid}. </p>
+        <p>The last ask for BTC from CEX.io is ${cex.btc_ask}. The last ask for BTC from Bitfinex is ${bitfinex.btc_ask}.</p>
+        <p>The last bid for ETH from CEX.io is ${cex.eth_bid}. The last bid for ETH from Bitfinex is ${bitfinex.eth_bid}.</p>
+        <p>The last ask for ETH from CEX.io is ${cex.eth_ask}. The last ask for ETH from Bitfinex is ${bitfinex.eth_ask}.</p>
       </header>
     </div>
   );
