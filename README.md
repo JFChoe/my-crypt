@@ -5,7 +5,7 @@ Heroku deploy [8/7/2020, 12:55]
 
 In the project directory, you can run:
 ### `npm install`
-Run this command when initially running this project locally in order to install the need npm modules
+Run this command when initially running this project locally in order to install the needed npm modules
 
 ### IMPORTANT
 In order for this project to run successfully, the Flask Backend API needs to be upstarted too. 
