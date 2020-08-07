@@ -30,7 +30,7 @@ Second, make sure to install Flask and python-dotenv in the venv
 ```
 
 
-FINALLY, run the flask server using either npm run-script start-api or npm run-script start-api-unix (dependending on your OS)
+FINALLY, run the flask server using either `npm run-script start-api` or `npm run-script start-api-unix` (depending on your OS)
 Make sure to run this command in the ROOT project folder (~/my-crypt)
 ```
 (venv) $ deactivate
