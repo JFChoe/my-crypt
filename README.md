@@ -24,9 +24,10 @@ $ venv\Scripts\activate
 (venv) $ _
 ```
 
-Second, make sure to install Flask and python-dotenv in the venv
+Second, make sure to install the python modules from requirements.txt in the venv
 ```
-(venv) $ pip install flask python-dotenv
+(venv) $ cd ..
+(venv) $ pip install -r requirements.txt
 ```
 
 
@@ -34,7 +35,6 @@ FINALLY, run the flask server using either `npm run-script start-api` or `npm ru
 Make sure to run this command in the ROOT project folder (~/my-crypt)
 ```
 (venv) $ deactivate
-$ cd ..
 $ npm run-script start-api-unix
 ```
 
