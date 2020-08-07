@@ -4,6 +4,39 @@ Heroku deploy [8/7/2020, 12:55]
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install`
+Run this command when initially running this project locally in order to install the need npm modules
+
+### IMPORTANT
+In order for this project to run successfully, the Flask Backend API needs to be upstarted too. 
+First create a virtual environment using python within the `api` folder
+```
+$ cd api
+$ python3 -m venv venv
+$ source venv/bin/activate
+(venv) $ _
+```
+NOTE: The above is for Unix-based operating systems. Use this instead if using windows
+```
+$ cd api
+$ python3 -m venv venv
+$ venv\Scripts\activate
+(venv) $ _
+```
+
+Second, make sure to install Flask and python-dotenv in the venv
+```
+(venv) $ pip install flask python-dotenv
+```
+
+
+FINALLY, run the flask server using either npm run-script start-api or npm run-script start-api-unix (dependending on your OS)
+Make sure to run this command in the ROOT project folder (~/my-crypt)
+```
+(venv) $ deactivate
+$ cd ..
+$ npm run-script start-api-unix
+```
 
 ### `npm start`
 
@@ -15,7 +48,11 @@ You will also see any lint errors in the console.
 
 ### `npm run-script start-api`
 
-Runs the Flask API backend endpoint. Enables the front end to receive information of exchange prices. 
+FOR WINDOWS: Runs the Flask API backend endpoint. Enables the front end to receive information of exchange prices. 
+
+### `npm run-script start-api-unix`
+
+FOR UNIX: Runs the Flask API backend endpoint. Enables the front end to receive information of exchange prices. 
 
 ### `npm test`
 
