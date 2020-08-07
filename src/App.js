@@ -31,6 +31,10 @@ function App() {
     sell_eth: "",
   });
 
+  function refreshPage() {
+    window.location.reload(); 
+  }
+
   useEffect(() => {
     fetch("/api/cex")
       .then((res) => res.json())
@@ -202,6 +206,7 @@ function App() {
           </td>
         </tr>
       </table>
+      <button className="button" onClick={ refreshPage }> <span>Reload Market Prices</span> </button> 
     </div>
   );
 }
