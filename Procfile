@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath api api:app
+web: flask --pythonpath api api:app
